@@ -3,7 +3,7 @@ using DataFrames
 using Plots
 
 #- Read the text file
-open("c:/Users/Shayan/Desktop/p.txt", "r") do io
+open("../utils/p.txt", "r") do io
   global text = read(io, String)
 end;
 
