@@ -10,7 +10,7 @@ open("../utils/p.txt", "r") do io
 end;
 ```
 
-Afterward, it's ready to be passed to the `do_the_job` function to get the number of occurrences of each word in each sentence of the `text`:
+<p align="justify">Afterward, it's ready to be passed to the `do_the_job` function to get the number of occurrences of each word in each sentence of the `text`:</a>
 
 ```julia
 final = do_the_job(text)
