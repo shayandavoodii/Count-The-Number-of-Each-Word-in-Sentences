@@ -1,7 +1,7 @@
 # Count The Number of Each Word in Sentences
 
 I defined a function that calculates the occurrence of each word in each sentence of the text for $word\in(text)$. The text can be loaded from a .txt file or can be passed as a string to function. Lastly, I wrote the required `plot` function with arbitrary arguments to plot the length of each sentence for $sentence\in(text)$ based on the count of the words in each one.  
-For example, given the `p.txt` file, I can first read and bind it to a variable, named `text`:
+For example, given the [`p.txt`](https://github.com/shayandavoodii/Count-The-Number-of-Each-Word-in-Sentences/blob/main/utils/p.txt) file, I can first read and bind it to a variable, named `text`:
 
 ```julia
 open("../utils/p.txt", "r") do io
