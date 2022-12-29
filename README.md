@@ -3,7 +3,7 @@
 I defined a function that calculates occurence of each word in the each sentences of the text for $word\in(text)$. The text can be loaded from a .txt file or can be passed as a string to function. Lastly, I wrote the required `plot` function with arbitrary arguments to plot the length of each sentence for $sentence\in(text)$ based on the count of the words in each one.  
 For example, given the `p.txt` file, I can firstly read and bind it to a veriable, named `text`:
 ```julia
-open("p.txt", "r") do io
+open("../utils/p.txt", "r") do io
   global text = read(io, String)
 end;
 ```
