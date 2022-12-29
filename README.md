@@ -1,7 +1,7 @@
 # <p align="center">Count The Number of Each Word in Sentences</a>
 <p align="justify">
 I defined a function that calculates the occurrence of each word in each sentence of the text for $word\in(text)$. The text can be loaded from a .txt file or can be passed as a string to function. Lastly, I wrote the required `plot` function with arbitrary arguments to plot the length of each sentence for $sentence\in(text)$ based on the count of the words in each one.  
-For example, given the <a href="https://github.com/shayandavoodii/Count-The-Number-of-Each-Word-in-Sentences/blob/main/utils/p.txt"><code>p.txt</code></a> file, I can first read and bind it to a variable, named `text`:
+For example, given the <a href="https://github.com/shayandavoodii/Count-The-Number-of-Each-Word-in-Sentences/blob/main/utils/p.txt"><code>p.txt</code></a> file, I can first read and bind it to a variable, named <code>text</code>:
 </p>
 
 ```julia
