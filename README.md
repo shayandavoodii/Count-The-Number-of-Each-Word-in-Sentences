@@ -1,13 +1,16 @@
 # Count The Number of Each Word in Sentences
- 
-I defined a function that calculates occurence of each word in the each sentences of the text for $word\in(text)$. The text can be loaded from a .txt file or can be passed as a string to function. Lastly, I wrote the required `plot` function with arbitrary arguments to plot the length of each sentence for $sentence\in(text)$ based on the count of the words in each one.  
-For example, given the `p.txt` file, I can firstly read and bind it to a veriable, named `text`:
+
+I defined a function that calculates the occurrence of each word in each sentence of the text for $word\in(text)$. The text can be loaded from a .txt file or can be passed as a string to function. Lastly, I wrote the required `plot` function with arbitrary arguments to plot the length of each sentence for $sentence\in(text)$ based on the count of the words in each one.  
+For example, given the `p.txt` file, I can first read and bind it to a variable, named `text`:
+
 ```julia
 open("../utils/p.txt", "r") do io
   global text = read(io, String)
 end;
 ```
-Afterwards, it's ready to be passed to the `do_the_job` function to get the number of occurences of each word in each sentence of the `text`:
+
+Afterward, it's ready to be passed to the `do_the_job` function to get the number of occurrences of each word in each sentence of the `text`:
+
 ```julia
 final = do_the_job(text)
 # 19×6 DataFrame
@@ -34,7 +37,9 @@ final = do_the_job(text)
 #   18 │ are               0           0           0           0           0
 #   19 │ and               0           0           0           1           0
 ```
-And, I can plot it using the following code to see the lenth of each sentence:
+
+And, I can plot it using the following code to see the length of each sentence:
+
 ```julia
 using Plots
 
@@ -58,8 +63,10 @@ bar(
   dpi=300
 )
 ```
+
 ![plot](https://user-images.githubusercontent.com/52105833/209954977-4266e5be-bedf-4dfb-a5e5-8c84ed1d5a61.png)
-Similarly, I can passs a string to `do_the_job`:
+Similarly, I can pass a string to `do_the_job`:
+
 ```julia
 text = """Animals are multicellular, eukaryotic organisms of the kingdom Animalia
 (also called Metazoa). The animal kingdom emerged as a basal clade within Apoikozoa as a sister of the choanoflagellates. Animals are motile, meaning they can move spontaneously and independently at some point in their lives. Their body plan eventually becomes fixed as they develop, although some undergo a process of
@@ -118,6 +125,4 @@ final = do_the_job(text)
 #  197 │ taxonomic                   0           0           0           0           0           0           0    ⋯ 
 #  198 │ nomenclature                0           0           0           0           0           0           0
 #                                                                                   10 columns and 156 rows omitted
-
 ```
-
