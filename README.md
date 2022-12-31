@@ -18,25 +18,25 @@ final = do_the_job(text)
 #  Row │ words    sentence 1  sentence 2  sentence 3  sentence 4  sentence 5
 #      │ String   Int64       Int64       Int64       Int64       Int64
 # ─────┼─────────────────────────────────────────────────────────────────────
-#    1 │ the               0           0           1           0           0
-#    2 │ quick             0           0           0           0           1
-#    3 │ brown             0           0           0           2           2
-#    4 │ fox               0           0           0           0           1
-#    5 │ jumped            0           0           0           1           0
-#    6 │ over              1           0           0           0           0
-#    7 │ lazy              1           1           1           0           0
-#    8 │ dog               1           1           1           0           0
-#    9 │ saw               1           1           0           0           0
-#   10 │ a                 0           0           1           1           0
-#   11 │ jumping           1           1           0           0           1
-#   12 │ there             0           0           0           1           0
-#   13 │ seem              1           1           0           0           0
-#   14 │ to                1           0           0           0           1
-#   15 │ be                0           0           1           0           0
-#   16 │ animals           0           0           0           1           0
-#   17 │ other             1           1           0           0           0
-#   18 │ are               0           0           0           0           0
-#   19 │ and               0           0           0           1           0
+#    1 │ a                 0           0           1           1           0
+#    2 │ and               0           0           0           1           0
+#    3 │ animals           0           0           0           1           0
+#    4 │ are               0           0           0           0           0
+#    5 │ be                0           0           1           0           0
+#    6 │ brown             0           0           0           2           2
+#    7 │ dog               1           1           1           0           0
+#    8 │ fox               0           0           0           0           1
+#    9 │ jumped            0           0           0           1           0
+#   10 │ jumping           1           1           0           0           1
+#   11 │ lazy              1           1           1           0           0
+#   12 │ other             1           1           0           0           0
+#   13 │ over              1           0           0           0           0
+#   14 │ quick             0           0           0           0           1
+#   15 │ saw               1           1           0           0           0
+#   16 │ seem              1           1           0           0           0
+#   17 │ the               0           0           1           0           0
+#   18 │ there             0           0           0           1           0
+#   19 │ to                1           0           0           0           1
 ```
 
 And, I can plot it using the following code to see the length of each sentence:
@@ -78,52 +78,54 @@ diverse as sponges, jellyfish, insects, and humans. Aristotle divided the world 
 be artificial, and most biologists instead use an all-encompassing phrase such as the "animal kingdom" or just "animals". However, it is still commonly used in zoology, and more specifically in taxonomy, where it is preferred to avoid the ambiguity of the word "animal" in the context of taxonomic nomenclature."""
 
 final = do_the_job(text)
-# 198×18 DataFrame
-#  Row │ words              sentence 1  sentence 2  sentence 3  sentence 4  sentence 5  sentence 6  sentence 7  s ⋯   
-#      │ String             Int64       Int64       Int64       Int64       Int64       Int64       Int64      
-# ─────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────   
-#    1 │ animals                     0           0           0           0           0           0           0    ⋯   
-#    2 │ are                         0           0           0           0           0           0           0
-#    3 │ multicellular,              0           0           0           0           0           0           0
-#    4 │ eukaryotic                  0           0           0           0           0           0           0
-#    5 │ organisms                   0           0           0           0           0           0           0    ⋯   
-#    6 │ of                          0           0           0           0           0           1           0
-#    7 │ the                         0           2           0           1           0           0           0
-#    8 │ kingdom                     0           0           0           0           0           1           0
-#    9 │ animalia\n(also             0           0           0           0           0           1           0    ⋯  
-#   10 │ called                      0           0           0           0           0           0           0
-#   11 │ metazoa)                    0           0           0           0           0           0           0
-#   12 │ animal                      0           0           0           1           0           0           0
-#   13 │ emerged                     0           0           0           0           0           0           0    ⋯  
-#   14 │ as                          0           0           0           0           0           0           0
-#   15 │ a                           0           0           0           0           0           0           0
-#   16 │ basal                       0           0           0           0           0           0           0
-#   17 │ clade                       0           0           1           0           0           0           1    ⋯  
-#   18 │ within                      0           0           0           0           0           0           0
-#   19 │ apoikozoa                   0           1           0           0           0           1           0
-#   20 │ sister                      0           0           0           0           0           0           0
-#   21 │ choanoflagellates           0           0           0           0           0           0           0    ⋯  
-#   ⋮  │         ⋮              ⋮           ⋮           ⋮           ⋮           ⋮           ⋮           ⋮         ⋱ 
-#  178 │ such                        0           0           0           0           0           0           0
-#  179 │ "animal                     0           0           0           0           0           0           0
-#  180 │ kingdom"                    0           0           0           0           0           0           0
-#  181 │ just                        0           0           0           0           0           0           0    ⋯ 
-#  182 │ "animals"                   0           0           0           1           0           0           0
-#  183 │ however,                    0           0           0           0           0           0           0
-#  184 │ it                          0           0           0           0           0           0           0
-#  185 │ still                       0           0           0           0           0           0           1    ⋯ 
-#  186 │ commonly                    0           0           0           0           0           0           0
-#  187 │ used                        0           0           0           0           0           0           0
-#  188 │ zoology,                    0           0           0           0           0           0           0
-#  189 │ more                        0           0           0           0           0           0           0    ⋯ 
-#  190 │ specifically                0           0           0           0           0           0           0
-#  191 │ taxonomy,                   0           0           0           0           0           0           0
-#  192 │ where                       0           1           0           0           0           0           0
-#  193 │ preferred                   0           0           0           0           0           0           0    ⋯ 
-#  194 │ avoid                       0           0           0           0           0           0           0
-#  195 │ ambiguity                   0           0           0           0           0           0           0
-#  196 │ context                     0           0           0           0           0           1           0
-#  197 │ taxonomic                   0           0           0           0           0           0           0    ⋯ 
-#  198 │ nomenclature                0           0           0           0           0           0           0
-#                                                                                   10 columns and 156 rows omitted
+# 190×20 DataFrame
+#  Row │ words             sentence 1  sentence 2  sentence 3  sentence 4  sentence 5  sentence 6  sentence  ⋯
+#      │ String            Int64       Int64       Int64       Int64       Int64       Int64       Int64
+# ─────┼──────────────────────────────────────────────────────────────────────────────────────────────────────
+#    1 │                            0           0           0           0           0           0            ⋯
+#    2 │ a                          0           0           0           0           0           0
+#    3 │ about                      0           0           0           1           0           0
+#    4 │ ago                        0           0           0           0           0           0
+#    5 │ all                        0           1           0           0           0           0            ⋯
+#    6 │ all-encompassing           0           0           1           1           1           0
+#    7 │ also                       0           0           0           0           0           0
+#    8 │ although                   1           0           0           0           0           0
+#    9 │ ambiguity                  0           1           0           0           0           0            ⋯
+#   10 │ amount                     0           0           0           0           0           0
+#   11 │ amphibians                 0           0           0           0           0           0
+#   12 │ an                         0           0           0           0           0           0
+#   13 │ and                        0           0           0           0           0           0            ⋯
+#   14 │ anemones                   0           0           0           0           0           1
+#   15 │ animal                     0           0           1           0           0           0
+#   16 │ animalia                   0           0           0           0           0           0
+#   17 │ animalis                   1           1           0           1           0           0            ⋯
+#   18 │ animals                    0           0           0           0           0           1
+#   19 │ annelids                   0           0           1           1           0           0
+#   20 │ apoikozoa                  0           0           0           0           0           0
+#   21 │ appeared                   0           0           0           1           0           0            ⋯
+#   22 │ are                        0           2           0           1           0           0
+#   23 │ aristotle                  0           0           0           0           0           0
+#   ⋮  │        ⋮              ⋮           ⋮           ⋮           ⋮           ⋮           ⋮           ⋮     ⋱
+#  169 │ these                      1           1           0           0           0           0
+#  170 │ they                       0           0           0           0           0           0            ⋯
+#  171 │ things                     0           0           0           0           0           0
+#  172 │ this                       0           0           0           0           0           0
+#  173 │ to                         0           0           0           0           0           0
+#  174 │ undergo                    0           0           0           0           0           0            ⋯
+#  175 │ use                        0           0           1           1           1           0
+#  176 │ used                       0           0           0           0           0           0
+#  177 │ vertebrates                0           0           0           0           0           1
+#  178 │ was                        0           1           0           0           0           0            ⋯
+#  179 │ were                       0           0           0           0           0           0
+#  180 │ when                       0           0           0           0           0           0
+#  181 │ where                      0           0           0           0           0           0
+#  182 │ which                      0           0           0           0           0           0            ⋯
+#  183 │ who                        0           0           0           0           0           0
+#  184 │ within                     0           0           0           0           0           0
+#  185 │ word                       0           0           0           0           1           0
+#  186 │ world                      0           0           0           0           0           0            ⋯
+#  187 │ worms                      0           0           0           0           0           0
+#  188 │ wow                        0           0           0           0           0           0
+#  189 │ years                      0           0           0           0           0           0
+#  190 │ zoology                    1           0           0           0           0           0            ⋯                                                                             13 columns and 145 rows omitted
 ```
