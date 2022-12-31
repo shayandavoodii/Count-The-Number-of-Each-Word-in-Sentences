@@ -3,25 +3,27 @@ using DataFrames
 using Plots
 
 #- Read the text file
-open("../utils/p.txt", "r") do io
+open(joinpath(dirname(@__DIR__), "utils", "p.txt"), "r") do io
   global text = read(io, String)
 end;
 
 #- Define the function that does the job
 function do_the_job(string::String)
-  b = replace(string, r"([.?!])\s*(?=[A-Z])" => s"\1|")
-  b = replace(b, r"\r\n" => " ")
-  b = replace(b, r"[.]"=>"")
-  b = split(b, "|")
-
-  un_words = unique(lowercase.(collect(Base.Flatten(split.(b, " ")))))
+  pattern = r"""(\s?[A-Za-z]+[-']?[A-Za-z]+\s?)|([A-Za-z])|([\.])"""
+  text = replace(string, "\n"=>" ", "\""=>"", "..."=>".", "\r"=>"", r"\.[^\s]?"=>". ")
+  # show(stdout, "text/plain", text)
+  before_split = join(getindex.(text, findall(pattern, text)))
+  before_split = replace(before_split, r"\.\s+"=>". ", r"\."=>"")
+  a = split(before_split, r"\.\s+")
+  un_words = unique(lowercase.(collect(Base.Flatten(split.(a, " ")))))
 
   dict = Dict{String, Vector{Int64}}()
   for word in un_words
-      dict[word] = count.(==(1), broadcast.(==("$word"), split.(b, " ")))
+      dict[word] = count.(==(1), broadcast.(==("$word"), split.(a, " ")))
   end
   final = hcat(DataFrame(words = un_words), permutedims(DataFrame(dict)))
   rename!(final, Dict("x$i"=>"sentence $i" for i=1:size(final, 2)-1))
+  sort!(final, :words, rev=false)
   return final
 end
 
