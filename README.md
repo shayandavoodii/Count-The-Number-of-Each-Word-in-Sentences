@@ -64,8 +64,8 @@ bar(
   dpi=300
 )
 ```
+![Number_of_words](https://user-images.githubusercontent.com/52105833/210164664-4ff52f2c-9b1e-4306-b3da-dc0bf60e8fcd.png)
 
-![plot](https://user-images.githubusercontent.com/52105833/209954977-4266e5be-bedf-4dfb-a5e5-8c84ed1d5a61.png)
 Similarly, I can pass a string to `do_the_job`:
 
 ```julia
