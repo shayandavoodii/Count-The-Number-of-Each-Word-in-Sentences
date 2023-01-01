@@ -30,8 +30,6 @@ function do_the_job(string::String)
   return final
 end
 
-DataFrames.deleteat!(df::DataFrame, inds::Nothing) = df
-
 #- Call the function
 final = do_the_job(text)
 
