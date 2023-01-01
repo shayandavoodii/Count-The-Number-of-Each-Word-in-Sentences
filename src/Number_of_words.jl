@@ -1,6 +1,7 @@
 #- Import the required packages
 using DataFrames
 using Plots
+using DataStructures
 
 #- Read the text file
 open(joinpath(dirname(@__DIR__), "utils", "p.txt"), "r") do io
@@ -15,17 +16,21 @@ function do_the_job(string::String)
   before_split = join(getindex.(text, findall(pattern, text)))
   before_split = replace(before_split, r"\.\s+"=>". ", r"\."=>"")
   a = split(before_split, r"\.\s+")
-  un_words = unique(lowercase.(collect(Base.Flatten(split.(a, " ")))))
+  splitted = broadcast(x->lowercase.(x), (split.(a, " ")))
+  un_words = unique(Base.Flatten(splitted))
 
-  dict = Dict{String, Vector{Int64}}()
+  dict = OrderedDict{String, Vector{Int64}}()
   for word in un_words
-      dict[word] = count.(==(1), broadcast.(==("$word"), split.(a, " ")))
+      dict[word] = count.(==(1), broadcast.(==("$word"), splitted))
   end
   final = hcat(DataFrame(words = un_words), permutedims(DataFrame(dict)))
   rename!(final, Dict("x$i"=>"sentence $i" for i=1:size(final, 2)-1))
   sort!(final, :words, rev=false)
+  DataFrames.deleteat!(final, findall(x->x=="", @view(final[!, 1])))
   return final
 end
+
+DataFrames.deleteat!(df::DataFrame, inds::Nothing) = df
 
 #- Call the function
 final = do_the_job(text)
